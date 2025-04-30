@@ -1,41 +1,42 @@
 public class MSZ_GravedadPlaneta {
+    private String nombre;
+    private double gravedadPlaneta;
 
-    private String nombrePlaneta;
-    private double gravedad; 
-
+    // Constructor por defecto
     public MSZ_GravedadPlaneta() {
-        this.nombrePlaneta = "";
-        this.gravedad = 0.0;
+        this.nombre = "";
+        this.gravedadPlaneta = 0.0;
     }
 
-    public MSZ_GravedadPlaneta(String nombrePlaneta, double gravedad) {
-        this.nombrePlaneta = nombrePlaneta;
-        this.gravedad = gravedad;
+    // Constructor con todos los argumentos
+    public MSZ_GravedadPlaneta(String nombre, double gravedadPlaneta) {
+        this.nombre = nombre;
+        this.gravedadPlaneta = gravedadPlaneta;
     }
 
-    // Getters y Setters
-    public String getNombrePlaneta() {
-        return nombrePlaneta;
+    // Métodos getter y setter
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombrePlaneta(String nombrePlaneta) {
-        this.nombrePlaneta = nombrePlaneta;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public double getGravedad() {
-        return gravedad;
+    public double getGravedadPlaneta() {
+        return gravedadPlaneta;
     }
 
-    public void setGravedad(double gravedad) {
-        this.gravedad = gravedad;
+    public void setGravedadPlaneta(double gravedadPlaneta) {
+        this.gravedadPlaneta = gravedadPlaneta;
     }
 
     // Método toString
     @Override
     public String toString() {
-        return "Planeta{" +
-                "nombre='" + nombrePlaneta + '\'' +
-                ", gravedad=" + gravedad + " m/s²" +
+        return "GravedadPlaneta_MSZ{" +
+                "nombre='" + nombre + '\'' +
+                ", gravedadPlaneta=" + gravedadPlaneta +
                 '}';
     }
 }
