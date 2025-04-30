@@ -1,20 +1,21 @@
 public class Persona_MSZ {
-
     private int id;
-    private int nombre; 
-    private double masa; 
+    private String nombre;
+    private double masa;
     private double altura;
     private int edad;
 
+    // Constructor por defecto
     public Persona_MSZ() {
         this.id = 0;
-        this.nombre = 0;
+        this.nombre = "";
         this.masa = 0.0;
         this.altura = 0.0;
         this.edad = 0;
     }
 
-    public Persona_MSZ(int id, int nombre, double masa, double altura, int edad) {
+    // Constructor con todos los argumentos
+    public Persona_MSZ(int id, String nombre, double masa, double altura, int edad) {
         this.id = id;
         this.nombre = nombre;
         this.masa = masa;
@@ -22,6 +23,7 @@ public class Persona_MSZ {
         this.edad = edad;
     }
 
+    // Métodos getter y setter
     public int getId() {
         return id;
     }
@@ -30,11 +32,11 @@ public class Persona_MSZ {
         this.id = id;
     }
 
-    public int getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(int nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -62,19 +64,25 @@ public class Persona_MSZ {
         this.edad = edad;
     }
 
-    public double calcularPeso(double gravedad) {
-        return this.masa * gravedad;
+    // Método para calcular IMC
+    public double calcularIMC() {
+        return masa / (altura * altura);
     }
-    
+
+    // Método para calcular el peso en un planeta
+    public double calcularPesoEnPlaneta(MSZ_GravedadPlaneta planeta) {
+        return masa * planeta.getGravedadPlaneta();
+    }
+
+    // Método toString
     @Override
     public String toString() {
-        return "Persona{" +
+        return "Persona_MSZ{" +
                 "id=" + id +
-                ", nombre=" + nombre +
+                ", nombre='" + nombre + '\'' +
                 ", masa=" + masa +
                 ", altura=" + altura +
                 ", edad=" + edad +
-                ", peso(Tierra)= " + calcularPeso(9.81) + " N" +
                 '}';
     }
 }
